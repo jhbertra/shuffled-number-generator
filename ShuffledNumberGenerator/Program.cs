@@ -10,6 +10,7 @@ namespace ShuffledNumberGenerator
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

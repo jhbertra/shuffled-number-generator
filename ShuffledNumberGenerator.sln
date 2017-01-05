@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuffledNumberGenerator", "ShuffledNumberGenerator\ShuffledNumberGenerator.csproj", "{78F19968-58A8-4177-BC09-EC5DF98F704D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuffledNumberGeneratorTests", "ShuffledNumberGeneratorTests\ShuffledNumberGeneratorTests.csproj", "{C8BB4CAA-B47B-43B9-8F70-3BC17AA43DC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{78F19968-58A8-4177-BC09-EC5DF98F704D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78F19968-58A8-4177-BC09-EC5DF98F704D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78F19968-58A8-4177-BC09-EC5DF98F704D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8BB4CAA-B47B-43B9-8F70-3BC17AA43DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8BB4CAA-B47B-43B9-8F70-3BC17AA43DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8BB4CAA-B47B-43B9-8F70-3BC17AA43DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8BB4CAA-B47B-43B9-8F70-3BC17AA43DC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
