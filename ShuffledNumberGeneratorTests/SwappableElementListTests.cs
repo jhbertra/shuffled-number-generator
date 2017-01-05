@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShuffledNumberGenerator.Tests
 {
@@ -12,11 +13,7 @@ namespace ShuffledNumberGenerator.Tests
         [SetUp]
         public void SetUp()
         {
-            _subject = new List<int>(5);
-            for (var i = 0; i < 5; ++i)
-            {
-                _subject.Add(i);
-            }
+            _subject = Enumerable.Range(0, 5).ToList();
         }
 
         [Test]
