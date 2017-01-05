@@ -6,7 +6,7 @@ using System.Linq;
 namespace ShuffledNumberGenerator.Tests
 {
     [TestFixture]
-    public class SwappableElementListTests
+    public class ListExtensionsTests
     {
         private List<int> _subject;
 

@@ -29,7 +29,7 @@ namespace ShuffledNumberGenerator
                 throw new ArgumentOutOfRangeException(nameof(secondIndex),
                     "cannot swap element at index " + secondIndex + " in list of size " + list.Count);
 
-            // Return early if indecies are the same
+            // Return early if indeces are the same
             if (firstIndex == secondIndex)
                 return; 
 
