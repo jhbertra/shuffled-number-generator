@@ -1,22 +1,18 @@
 ﻿using NUnit.Framework;
-using ShuffledNumberGenerator;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShuffledNumberGenerator.Tests
 {
     [TestFixture]
     public class SwappableElementListTests
     {
-        private SwappableElementList<int> _subject;
+        private List<int> _subject;
 
         [SetUp]
         public void SetUp()
         {
-            _subject = new SwappableElementList<int>(5);
+            _subject = new List<int>(5);
             for (var i = 0; i < 5; ++i)
             {
                 _subject.Add(i);
