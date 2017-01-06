@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Program")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ShuffledNumberGenerator")]
+[assembly: AssemblyDescription("A command line utility that generates a list of 10,000 numbers in random order.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Program")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("ShuffledNumberGenerator")]
+[assembly: AssemblyCopyright("Copyright © 2017 Jamie Bertram")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
