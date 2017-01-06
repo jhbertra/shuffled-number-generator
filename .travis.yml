@@ -1,8 +1,16 @@
 language: csharp
 solution: ShuffledNumberGenerator.sln
 install:
-    - nuget restore ShuffledNumberGenerator.sln
-    - nuget install NUnit.Console -Version 3.5.0 -OutputDirectory test-runner
+  - nuget restore ShuffledNumberGenerator.sln
+  - nuget install NUnit.Console -Version 3.5.0 -OutputDirectory test-runner
 script:
-    - xbuild /p:Configuration=Release ShuffledNumberGenerator.sln
-    - mono ./test-runner/NUnit.ConsoleRunner.3.5.0/tools/nunit3-console.exe ./ShuffledNumberGeneratorTests/bin/Release/ShuffledNumberGeneratorTests.dll
+  - xbuild /p:Configuration=Release ShuffledNumberGenerator.sln
+  - mono ./test-runner/NUnit.ConsoleRunner.3.5.0/tools/nunit3-console.exe ./ShuffledNumberGeneratorTests/bin/Release/ShuffledNumberGeneratorTests.dll
+deploy:
+  provider: s3
+  access_key_id: AKIAISUNNPWVISWROSUQ
+  secret_access_key:
+    secure: b2Bu6PveuxImCApNLLScukASBfEYB21J1xjRrEd94A4kbpwNnPVstNX4rxgnHKxSehZOlyW45TNkLqz3vzFBmDWmUaG9ljyUdraLQbFAP7tFK3bhhIzWqw3cNWVvbDH2rD9vyscFVmkFwWJFUidxQ7yEJ4VB5CvYXUcx/GTL04WZV0q2o372DBYAOD/bWEK4qQEQGpjdSe4aoFKdWzI0fkbA7Lvv19nxg2bRnEK+Jnd4DyxYM3ELbGgxUr9WJRf6Vm56dreoppR8Mq8WmL4ueSZROee3/SmxOGPUUpMRro40yJXsiiconSFOzdIGCVPOQcbKy8Kl2nH++Cs1vQDmQC59wnFeVWyQq69xFLmhqEVDPRw3ST+aQ9EjfaHDYf3sfORMVRDzWTx1M30twb3aIfrKfbvi3PjOfAzty7/Cs52JYsDfNW089jMOahUhWsmKv+fmtdoDhnTwLfPBeIsagz+MpmAYnlSZkhMdt8pE7MqhaSF3l0Gc70Z6HT6H2MIx0zLtOvLVPUJHckUsAADoBgrjK2MSJKAp+NLQWJwKx/foc4635z+d3Ls2axvR6XBOszd2Dh+zzXMVEUBE6f4LpdvWiXkBjo8GjgTbUGX9iSXITmMEuuHqdo+nFV2kdkDCxuEWxmyCjkNN+R4jsYxreYPhq91eXaHTtej+EcYE3fM=
+  bucket: shuffled-number-generator
+  skip_cleanup: true
+  local_dir: ShuffledNumberGenerator/bin/Release
