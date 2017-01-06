@@ -5,7 +5,7 @@ using Moq;
 namespace ShuffledNumberGeneratorTests
 {
     [TestFixture]
-    public class ShuffleIntegersTests
+    public class ShuffleArrayTests
     {
         private int[] _integers;
         private Mock<Random> _rngMock;
@@ -28,7 +28,7 @@ namespace ShuffledNumberGeneratorTests
         {
             _rngMock.Setup(random => random.NextDouble()).Returns(0).Verifiable();
 
-            ShuffledNumberGenerator.Application.ShuffleIntegers(_integers, _rngMock.Object);
+            ShuffledNumberGenerator.Application.ShuffleArray(_integers, _rngMock.Object);
 
             Assert.AreEqual(new[] { 2, 3, 4, 5, 1 }, _integers);
         }
@@ -38,7 +38,7 @@ namespace ShuffledNumberGeneratorTests
         {
             _rngMock.Setup(random => random.NextDouble()).Returns(0.9999).Verifiable();
 
-            ShuffledNumberGenerator.Application.ShuffleIntegers(_integers, _rngMock.Object);
+            ShuffledNumberGenerator.Application.ShuffleArray(_integers, _rngMock.Object);
 
             Assert.AreEqual(new[] { 1, 2, 3, 4, 5 }, _integers);
         }
@@ -51,7 +51,7 @@ namespace ShuffledNumberGeneratorTests
             var currentSequencePosition = 0;
             _rngMock.Setup(random => random.NextDouble()).Returns(() => rngSequence[currentSequencePosition++]).Verifiable();
 
-            ShuffledNumberGenerator.Application.ShuffleIntegers(_integers, _rngMock.Object);
+            ShuffledNumberGenerator.Application.ShuffleArray(_integers, _rngMock.Object);
 
             Assert.AreEqual(new[] { 4, 3, 5, 1, 2 }, _integers);
             /*
@@ -71,14 +71,14 @@ namespace ShuffledNumberGeneratorTests
         [Test]
         public void SingleElementArray_RngNeverCalled()
         {
-            ShuffledNumberGenerator.Application.ShuffleIntegers(new[] {0}, _rngMock.Object);
+            ShuffledNumberGenerator.Application.ShuffleArray(new[] {0}, _rngMock.Object);
             _rngMock.Verify(rng => rng.NextDouble(), Times.Never);
         }
 
         [Test]
         public void ZeroElementArray_RngNeverCalled()
         {
-            ShuffledNumberGenerator.Application.ShuffleIntegers(new int[0], _rngMock.Object);
+            ShuffledNumberGenerator.Application.ShuffleArray(new int[0], _rngMock.Object);
             _rngMock.Verify(rng => rng.NextDouble(), Times.Never);
         }
     }

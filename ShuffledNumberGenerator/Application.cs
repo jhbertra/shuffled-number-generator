@@ -28,7 +28,7 @@ namespace ShuffledNumberGenerator
         public static void RunProgramWithOutput(TextWriter output)
         {
             var integers = Enumerable.Range(1, 10000).ToArray();
-            ShuffleIntegers(integers, new Random());
+            ShuffleArray(integers, new Random());
             WriteIntegersToOutput(integers, output);
         }
 
@@ -40,7 +40,7 @@ namespace ShuffledNumberGenerator
         /// <param name="random">
         /// The pseudo-random number generator used to pick elements to swap.
         /// </param>
-        public static void ShuffleIntegers(int[] integers, Random random)
+        public static void ShuffleArray(int[] integers, Random random)
         {
             // While there are remaining elements to shuffle
             for (var lastUnshuffledIndex = integers.Length - 1; lastUnshuffledIndex > 0; --lastUnshuffledIndex)
