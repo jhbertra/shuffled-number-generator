@@ -1,0 +1,8 @@
+language: csharp
+solution: ShuffledNumberGenerator.sln
+install:
+    - nuget restore ShuffledNumberGenerator.sln
+    - nuget install NUnit.Console -Version 3.5.0 -OutputDirectory test-runner
+script:
+    - xbuild /p:Configuration=Release ShuffledNumberGenerator.sln
+    - mono ./test-runner/NUnit.ConsoleRunner.3.5.0/tools/nunit3-console.exe ./ShuffledNumberGeneratorTests/bin/Release/ShuffledNumberGeneratorTests.dll
