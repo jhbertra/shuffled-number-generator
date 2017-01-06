@@ -1,3 +1,5 @@
+[![Built with Travis CI](https://travis-ci.org/jhbertra/shuffled-number-generator.svg?branch=master)](https://travis-ci.org/jhbertra/shuffled-number-generator)
+
 # Shuffled Number Generator
 A command line utility that generates a list of 10,000 numbers in random order.
 Each number in the list is unique and is between 1 and 10,000 (inclusive). The
@@ -23,8 +25,9 @@ Tests can be run from the main menu with *Test > Run > All Tests*, or using
 ReSharper with *ReSharper > Unit Tests > Run All Unit Tests From Solution*
 
 ### Remote
-The project is under Continuous Integration and Delivery via TravisCI. The build
-can be accessed remotely from http://
+The project is built automatically on Travis CI and deployed to Amazon S3. The
+latest build can be accessed remotely from
+https://s3-us-west-2.amazonaws.com/shuffled-number-generator/ShuffledNumberGenerator.exe
 
 ## Commentary of Solution
 The goals I had in mind when writing this solution were:
